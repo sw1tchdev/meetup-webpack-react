@@ -1,0 +1,33 @@
+{
+  "root": true,
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:node/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "airbnb-base",
+    "prettier"
+  ],
+  "plugins": [
+    "import",
+    "prettier"
+  ],
+  "settings": {
+    "node": {
+      "tryExtensions": [
+        ".js"
+      ]
+    }
+  },
+  "rules": {
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.js"]}],
+    "prettier/prettier": "error"
+  }
+}
