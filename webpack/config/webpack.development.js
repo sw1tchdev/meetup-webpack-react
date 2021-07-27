@@ -30,6 +30,11 @@ module.exports = (env) =>
         client: true,
       },
     },
+    {
+      cache: {
+        name: env.build ? 'buildLocal' : 'development',
+      },
+    },
     javascript.loadJS(!env.build),
     env.build
       ? {}
