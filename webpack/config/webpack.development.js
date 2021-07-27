@@ -4,7 +4,7 @@ const webpackCommon = require('./webpack.common');
 const { PROJECT_DIR } = require('../paths');
 const { javascript } = require('../modules');
 
-module.exports = () =>
+module.exports = (env) =>
   merge(
     webpackCommon(),
     {
@@ -12,7 +12,7 @@ module.exports = () =>
       mode: 'development',
       devServer: {
         host: '0.0.0.0',
-        port: 9000,
+        port: 9009,
         static: {
           directory: path.join(PROJECT_DIR, 'dist'),
           publicPath: '/',
@@ -25,18 +25,21 @@ module.exports = () =>
         },
         https: true,
         hot: true,
-        liveReload: false,
+        liveReload: true,
         historyApiFallback: true,
         client: true,
       },
     },
-    javascript.enableReactHMR({
-      overlay: {
-        sockIntegration: 'wds',
-        sockHost: 'localhost',
-        sockPath: 'ws',
-        sockPort: 9000,
-        sockProtocol: 'wss',
-      },
-    }),
+    javascript.loadJS(!env.build),
+    env.build
+      ? {}
+      : javascript.enableReactHMR({
+          overlay: {
+            sockIntegration: 'wds',
+            sockHost: 'localhost',
+            sockPath: 'ws',
+            sockPort: 9000,
+            sockProtocol: 'wss',
+          },
+        }),
   );

@@ -1,7 +1,7 @@
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
-const loadJS = () => ({
+const loadJS = (addReactHMR = false) => ({
   module: {
     rules: [
       {
@@ -18,7 +18,7 @@ const loadJS = () => ({
                 helpers: true,
               },
             ],
-            'react-refresh/babel',
+            ...(addReactHMR ? ['react-refresh/babel'] : []),
           ],
         },
       },

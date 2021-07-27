@@ -8,7 +8,7 @@ module.exports = () =>
     {
       entry: path.resolve(PROJECT_DIR, 'src/index.tsx'),
       output: {
-        filename: '[name].bundle.js',
+        filename: '[name].[contenthash].bundle.js',
         path: path.resolve(PROJECT_DIR, 'dist'),
       },
       resolve: {
@@ -21,7 +21,6 @@ module.exports = () =>
         type: 'filesystem',
       },
     },
-    javascript.loadJS(),
     javascript.typeChecking(),
     html.injectHtml(),
     css.loadSCSS(),

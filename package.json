@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "webpack serve --node-env=development",
-    "build:local": "webpack --node-env=development",
+    "build:local": "webpack --node-env=development --env build",
     "build:production": "webpack --node-env=production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -9,6 +9,4 @@ function getWebpackConfigByEnv(env) {
   }
 }
 
-const createConfig = getWebpackConfigByEnv(process.env.NODE_ENV);
-
-module.exports = createConfig();
+module.exports = getWebpackConfigByEnv(process.env.NODE_ENV);
