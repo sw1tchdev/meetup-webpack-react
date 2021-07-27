@@ -1,12 +1,5 @@
-# Webpack Demo For Meetup
-Demonstration of webpack config including following features:
-* JS ES6+
-* Polyfills
-* Sass
-* Assets
-* Typescript
-* Working with Service Workers
-* Production build
+# Webpack React Demo For Meetup
+Demonstration of webpack config including React + HMR + Typescript
 ## Install
 ```shell
 # install deps
@@ -17,9 +10,9 @@ yarn
 ## Usage
 ### Development
 ```shell
-npm run start:dev
+npm run start
 # or
-yarn run start:dev
+yarn run start
 ```
 ### Build Local
 ```shell
@@ -29,19 +22,7 @@ yarn run build:local
 ```
 ### Build Production
 ```shell
-npm run build
+npm run build:production
 # or
-yarn run build
-```
-### Build Production Typings (Typescript)
-```shell
-npm run build:types
-# or
-yarn run build:types
-```
-### Build Production with Analyzer
-```shell
-npm run build:analyze
-# or
-yarn run build:analyze
+yarn run build:production
 ```
