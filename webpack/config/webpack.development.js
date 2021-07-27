@@ -14,7 +14,7 @@ module.exports = (env) =>
         host: '0.0.0.0',
         port: 9009,
         static: {
-          directory: path.join(PROJECT_DIR, 'dist'),
+          directory: path.join(PROJECT_DIR, 'public'),
           publicPath: '/',
         },
         allowedHosts: 'all',
