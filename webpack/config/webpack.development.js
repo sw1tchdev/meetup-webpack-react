@@ -43,7 +43,7 @@ module.exports = (env) =>
             sockIntegration: 'wds',
             sockHost: 'localhost',
             sockPath: 'ws',
-            sockPort: 9000,
+            sockPort: 9009,
             sockProtocol: 'wss',
           },
         }),
